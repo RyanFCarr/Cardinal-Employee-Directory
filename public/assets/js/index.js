@@ -59,3 +59,12 @@ let displayTable = () => {
     table = table + "</tbody></table>";
     $("#results").html(table);
 };
+
+let displayDetail = (event) => {
+    let employeeId = event.currentTarget.getAttribute("data-employeeid");
+    let employee = results.filter(e => e.id == employeeId)[0];
+    $("#headshot").attr("src", employee.headshot.large);
+    $("#employeeName").text(`${employee.name.title} ${employee.name.first} ${employee.name.last}`);
+    $("#employeeDept").text(employee.department);
+    $("#employeeTitle").text(employee.job_title);
+};
