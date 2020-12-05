@@ -1,0 +1,116 @@
+
+/* Colors
+Primary     #002D40 Blue
+Secondary   #DFA928 Orange
+Tertiary    #58585B
+Accent      #4E9A92 Teal
+*/
+
+/* Layout */
+
+    body{
+        margin:0 auto;
+        background-image: url("/public/assets/images/noise-bg.png");
+        font-family: "Montserrat", sans-serif;
+    }
+
+/* Header */
+    header{
+        margin-bottom: 20px;
+        border-bottom: #4E9A92 4px solid;
+        
+    }
+    .cf_Logo{
+        height: 120px;
+        width: 118px;
+        padding-bottom:10px;
+    }
+    #directoryHome:hover{
+        color:#DFA928;
+    }
+    .global-news-alert-bar{
+        height:35px;
+        background-color:#DFA928;
+        
+    }
+    p.global-news-alert-bar{
+        padding:8px;
+        padding-left:20px;
+        color:white;
+        text-align: left;
+        font-size: 12px;
+    }
+
+/* Main Content Area */
+
+/* Footer */
+    .footer{
+        height:128px;
+        border-bottom: #4E9A92 4px solid;
+        background-color: #002D40;
+    }
+    .ghlink {
+        color: #DFA928;
+    }
+    .ghlink:hover{
+        color: #4E9A92;
+        text-decoration: none;
+    }
+    .footer_text{
+        padding-top:25px;
+        color:#DFA928;
+    }
+    .author_text{
+        color: #4E9A92;
+        padding-right: 10px;
+    }
+
+/* Preset Font & Typography */
+    .display{
+        font-size: 64px;
+        font-weight: 200;
+    }
+    h1{
+        font-size: 48px;
+        font-weight: 800;
+    }
+    h2{
+        font-size: 36px;
+        font-weight: 500;
+    }
+    h3{
+        font-size: 30px;
+        font-weight: 400;
+    }
+    h4{
+        font-size: 24px;
+        font-weight: 800;
+    }
+    h5{
+        font-size: 24px;
+        font-weight: 600;
+    }
+    h6{
+        font-size: 20px;
+        font-weight: 500;
+    }
+    .alt_heading{
+        font-size: 18px;
+        font-weight: 700;
+    }
+    p{
+        font-size: 16px;
+        font-weight: 400;
+    }
+    p.medium{
+        font-size: 14px;
+        font-weight: 400;
+    }
+    p.small{
+        font-size: 12px;
+        font-weight: 400;
+    }
+    p.smallest{
+        font-size: 10px;
+        font-weight: 400;
+    }
