@@ -98,4 +98,4 @@ The following APIs were used in the development of this assignment.
 ![CardinalSearch](https://user-images.githubusercontent.com/61035701/101202678-92dd2600-3637-11eb-9b9f-1d01c6e30941.png)
 
 ## Deployed Application
-<a href="#">Cardinal-Employee-Directory</a>
+<a href="https://ryanfcarr.github.io/Cardinal-Employee-Directory/">Cardinal-Employee-Directory</a>
