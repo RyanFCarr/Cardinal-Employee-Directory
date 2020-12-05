@@ -2,7 +2,7 @@
 /* Colors
 Primary     #002D40 Blue
 Secondary   #DFA928 Orange
-Tertiary    #58585B
+Tertiary    #58585B Gray
 Accent      #4E9A92 Teal
 */
 
@@ -40,8 +40,17 @@ Accent      #4E9A92 Teal
         text-align: left;
         font-size: 12px;
     }
+    p.global-news-alert-bar > span > a{
+        color: white;
+    }
 
 /* Main Content Area */
+
+/* Buttons */
+    #filterbtn {
+        color: white;
+        background-color: #4E9A92;
+    }
 
 /* Footer */
     .footer{
@@ -57,12 +66,12 @@ Accent      #4E9A92 Teal
         text-decoration: none;
     }
     .footer_text{
-        padding-top:25px;
+        padding-top:10px;
         color:#DFA928;
     }
     .author_text{
-        color: #4E9A92;
-        padding-right: 10px;
+        color: whitesmoke;
+        padding-right: 15px;
     }
 
 /* Preset Font & Typography */
