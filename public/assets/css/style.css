@@ -10,7 +10,7 @@ Accent      #4E9A92 Teal
 
     body{
         margin:0 auto;
-        background-image: url("./public/assets/images/noise-bg.png");
+        background-image: url("../images/noise-bg.png");
         font-family: "Montserrat", sans-serif;
     }
 
