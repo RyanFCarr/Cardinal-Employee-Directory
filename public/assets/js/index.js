@@ -1,4 +1,8 @@
-$(".modalClose").each(btn => $(this).click(() => { $("#filter").val(""); }));
+$("#filterReset").click(() => { 
+    $(".filterDropdown.selectpicker").each(function() {
+        $(this).val("none").change();
+    });
+});
 
 let employees;
 let results;
@@ -6,7 +10,7 @@ $.getJSON("public/assets/employees.json", json => {
     employees = json.results;
 
     let reducer = (acc, current) => {
-        return acc + `<option>${current}</option>`;
+        return acc + `<option value='${current}'>${current}</option>`;
     };
 
     let states = new Set();
@@ -17,14 +21,22 @@ $.getJSON("public/assets/employees.json", json => {
     employees.map(employee => jobs.add(employee.job_title));
     
     // Passing in the reducer function
-    $("#stateFilter").html([...states].sort().reduce(reducer,"<option>None</option>"));
-    $("#deptFilter").html([...depts].sort().reduce(reducer,"<option>None</option>"));
-    $("#jobFilter").html([...jobs].sort().reduce(reducer,"<option>None</option>"));
+    $("#stateFilter").html([...states].sort().reduce(reducer,"<option value='none'>None</option>"));
+    $("#deptFilter").html([...depts].sort().reduce(reducer,"<option value='none'>None</option>"));
+    $("#jobFilter").html([...jobs].sort().reduce(reducer,"<option value='none'>None</option>"));
 });
 
 let displayTable = () => {
     let term = $("#searchBox").val();
-    results = employees.filter(employee => `${employee.name.first.toLowerCase()} ${employee.name.last.toLowerCase()}`.includes(term.toLowerCase()));
+    let jobFilter = $('#jobFilter').val()
+    let stateFilter = $('#stateFilter').val()
+    let deptFilter = $('#deptFilter').val()
+    results = employees.filter(employee =>
+        `${employee.name.first} ${employee.name.last}`.toLowerCase().includes(term.toLowerCase()) // Search name
+        && (jobFilter === "none" || jobFilter === employee.job_title)
+        && (stateFilter === "none" || stateFilter === employee.location.state)
+        && (deptFilter === "none"  || deptFilter === employee.department)
+        );
 
     let table = `
         <table id="searchResults" class="table table-striped">
@@ -37,7 +49,7 @@ let displayTable = () => {
     `;
 
     results.forEach(employee => {
-        table = table + `<tr>
+        table = table + `<tr data-toggle="modal" data-target="#detailModal" onclick="displayDetail(event)" data-employeeid=${employee.id}>
                             <td><img src="${employee.headshot.medium}" /> ${employee.name.title} ${employee.name.first} ${employee.name.last}</td>
                             <td>${employee.job_title}</td>
                             <td>${employee.department}</td>

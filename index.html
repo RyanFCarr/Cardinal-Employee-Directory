@@ -86,7 +86,7 @@
 			  <div class="modal-content">
 				<div class="modal-header">
 				  <h5 class="modal-title">Edit Filter</h5>
-				  <button type="button" class="close modalClose" data-dismiss="modal" aria-label="Close">
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 					<span aria-hidden="true">&times;</span>
 				  </button>
 				</div>
@@ -94,20 +94,45 @@
 					<div class="container">
 						<div class="row">
 							<div class="col">
-								<label for="jobFilter"><b>Job: </b></label><select id="jobFilter" class="selectpicker"></select>
+								<label for="jobFilter"><b>Job: </b></label><select id="jobFilter" class="selectpicker filterDropdown"></select>
 							</div>
 							<div class="col">
-								<label for="stateFilter"><b>State: </b></label><select id="stateFilter" class="selectpicker"></select>
+								<label for="stateFilter"><b>State: </b></label><select id="stateFilter" class="selectpicker filterDropdown"></select>
 							</div>
 							<div class="col">
-								<label for="deptFilter"><b>Department: </b></label><select id="deptFilter" class="selectpicker"></select>
+								<label for="deptFilter"><b>Department: </b></label><select id="deptFilter" class="selectpicker filterDropdown"></select>
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
-				  <button type="button" class="btn btn-primary">Apply</button>
-				  <button type="button" class="btn btn-secondary modalClose" data-dismiss="modal">Close</button>
+				  <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="displayTable()">Apply</button>
+				  <button type="button" id="filterReset" class="btn btn-danger">Reset</button>
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div id="detailModal" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h5 class="modal-title">Employee Detail</h5>
+				  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				  </button>
+				</div>
+				<div class="modal-body">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<img id="headshot" src="/" alt="headshot">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+				  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 				</div>
 			  </div>
 			</div>
